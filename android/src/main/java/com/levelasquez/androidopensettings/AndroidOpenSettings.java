@@ -55,8 +55,11 @@ public class AndroidOpenSettings extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void wifiSettings() {
+    public void wifiSettings(boolean openWithDialog) { 
         Intent intent = new Intent(Settings.ACTION_WIFI_SETTINGS);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q && openWithDialog == true) { // Dialog is only available from Android 10 (Q)
+            intent = new Intent(Settings.Panel.ACTION_WIFI);
+        }
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         if (intent.resolveActivity(reactContext.getPackageManager()) != null) {
