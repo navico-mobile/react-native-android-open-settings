@@ -8,7 +8,7 @@ const homeSettings = () => RNAndroidOpenSettings.homeSettings()
 
 const appDetailsSettings = () => RNAndroidOpenSettings.appDetailsSettings()
 
-const wifiSettings = () => RNAndroidOpenSettings.wifiSettings()
+const wifiSettings = (openWithDialog = false) => RNAndroidOpenSettings.wifiSettings(openWithDialog)
 
 const locationSourceSettings = () => RNAndroidOpenSettings.locationSourceSettings()
 
