@@ -2,7 +2,7 @@ declare module "react-native-android-open-settings" {
   const generalSettings: () => void;
   const homeSettings: () => void;
   const appDetailsSettings: () => void;
-  const wifiSettings: () => void;
+  const wifiSettings: (openWithDialog: boolean) => void;
   const locationSourceSettings: () => void;
   const wirelessSettings: () => void;
   const airplaneModeSettings: () => void;
